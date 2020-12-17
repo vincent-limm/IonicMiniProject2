@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Profile </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row *ngIf="photo" class="ion-justify-content-center">
+    <img [src]="photo" />
+  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        User : {{namaDepan}} {{namaBelakang}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-button (click)="logout()" expand="block" shape="round">
+        Log Out
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center"> Created by : </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center"> Vincent </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center"> 00000019941 </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-item *ngFor="let data of myFeed">
+      <ion-label>Checked in at {{data.time| date:'mediumDate'}}</ion-label>
+      <ion-buttons>
+        <ion-button (click)="deleteFeed(data.key)"
+          ><ion-icon name="close-circle-outline"></ion-icon
+        ></ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>Kesan Pesan :</ion-row>
+    <ion-row>Kelas ngga berasa kelas gara-gara online </ion-row>
+    <ion-row>┐(´ー｀)┌</ion-row>
+  </ion-grid>
+</ion-content>
